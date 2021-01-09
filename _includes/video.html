@@ -1,0 +1,9 @@
+<figure class="video">
+    <video playsinline controls
+           style="max-width: 100%; vertical-align: middle; display: block;">
+        {% assign source_url = page.assets | append: include.asset %}
+                <!-- link {{ source_url }} -->
+        <source src="{{ source_url }}">
+    </video>
+    <figcaption>{{ include.caption | escape }}</figcaption>
+</figure>

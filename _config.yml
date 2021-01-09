@@ -1,0 +1,26 @@
+title: Kunal Sheth
+
+email: kunal@kunalsheth.info
+description: Computer Engineering Undergraduate @ UIUC
+
+show_excerpts: true
+
+google_analytics: G-14NZNKV3HX
+
+minima:
+  date_format: "%b %-d, %Y"
+  social_links:
+    github: kunalsheth
+    linkedin: kunal-sheth
+    youtube_channel: UCK7UhiW0YjSgu4fNMrbQLXQ
+    youtube_channel_name: Kunal's Music
+
+#header_pages:
+# - about.md
+
+markdown: kramdown
+theme: minima
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

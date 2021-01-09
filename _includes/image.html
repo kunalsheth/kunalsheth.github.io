@@ -1,0 +1,6 @@
+<figure class="image">
+    {% assign source_url = page.assets | append: include.asset %}
+         <!-- link {{ source_url }} -->
+    <img src="{{ source_url }}" alt="{{ include.caption | escape }}">
+    <figcaption>{{ include.caption | escape }}</figcaption>
+</figure>

@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="home">
+
+    <table>
+        <tr>
+            <td>
+                {% include thumbnail.html size="15em" asset="/assets/profile.jpg" %}
+                <h2 class="page-heading">About Me</h2>
+                <p>I like to make stuff—software, electronics, art, and music.</p>
+                <p> I am studying Computer Engineering at the University of Illinois at Urbana-Champaign with a minor in
+                    Art & Design</p>
+                <p>In the future, I hope to conduct more research in the areas of programming language design, formal
+                    verification, and automated theorem proving.</p>
+            </td>
+        </tr>
+    </table>
+
+    <table class="post-list">
+        <tr>
+            <td><h1 class="post-list-heading">Portfolio</h1></td>
+        </tr>
+
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+        {%- for post in site.posts -%}
+
+        {% assign post_thumbnail_asset = post.assets | append: post.thumbnail %}
+        {% if post.external_url %}
+        {% assign post_link_attrs = "href='" | append: post.external_url | append: "' target='_blank'" %}
+        {% else %}
+        {% assign post_href_relative = post.url | relative_url %}
+        {% assign post_link_attrs = "href='" | append: post_href_relative | append: "'" %}
+        {% endif %}
+
+        <tr>
+            <td>
+                <a {{ post_link_attrs }}>
+                    {% include thumbnail.html size="10em" asset=post_thumbnail_asset %}
+                </a>
+                <span class="post-meta">{{ post.date | date: date_format }}</span>
+                <h3><a class="post-link" {{ post_link_attrs }}>{{ post.title | escape }}</a></h3>
+                <span>{{ post.excerpt | truncatewords: 30 }}</span>
+            </td>
+        </tr>
+        {%- endfor -%}
+    </table>
+</div>
